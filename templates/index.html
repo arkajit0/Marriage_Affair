@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+</head>
+
+<body id="image" style="background:url(/static/images/man_remove-ring-57cf70983df78c71b6e5b20b.jpg);">
+        <div class="content">
+        <h1 style="text-align: center">Predict If a person has Affair</h1>
+        <div class="form">
+            <form action="/predict" method="post">
+            <label for="rate_marriage">Marriage Rate</label>
+            <select name="rate_marriage" id="rate_marriage">
+                <option value="very poor">Very Poor</option>
+                <option value="poor">Poor</option>
+                <option value="fair">Fair</option>
+                <option value="good">Good</option>
+                <option value="very good">Very Good</option>
+            </select>
+            <br><br>
+            <label for="children">Number of children</label>
+            <select name="children" id="children">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="5.5">more than 5</option>
+            </select>
+            <br><br>
+            <label for="religious">Religious</label>
+            <select name="religious" id="religious">
+                <option value="not">Not</option>
+                <option value="mildly">Mildly</option>
+                <option value="fairly">Fairly</option>
+                <option value="strongly">Strongly</option>
+            </select>
+            <br><br>
+            <label for="educ">Education Qualification</label>
+            <select name="educ" id="educ">
+                <option value="grade school">Grade school</option>
+                <option value="high school">High school</option>
+                <option value="college UG">College UG</option>
+                <option value="college graduate">College graduate</option>
+                <option value="some graduate school">some graduate school</option>
+                <option value="advanced degree">advanced degree</option>
+            </select>
+            <br><br>
+            <label for="married age">Age</label>
+            <input name="married age", id="married age"  type="number" placeholder="Marriage Age" min="19">
+            <br><br>
+            <label for="occ_wife">Occupation of Wife</label>
+            <select name="occ_wife" id="occ_wife">
+                <option value="student">student</option>
+                <option value="unskilled">unskilled</option>
+                <option value="white colloar">white colloar</option>
+                <option value="skilled worker">skilled worker</option>
+                <option value="business">business</option>
+                <option value="professional">professional</option>
+            </select>
+            <br><br>
+            <label for="occ_husb">Occupation of Husband</label>
+            <select name="occ_husb" id="occ_husb">
+                <option value="student">student</option>
+                <option value="unskilled">unskilled</option>
+                <option value="white colloar">white colloar</option>
+                <option value="skilled worker">skilled worker</option>
+                <option value="business">business</option>
+                <option value="professional">professional</option>
+            </select>
+            <br><br>
+                <input value="Predict" type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
