@@ -3,7 +3,7 @@
 Marriage-Affair Prediction deployment URL: https://marriage-affairs.herokuapp.com/
 
 ## Introduction
-#### In this project we will build a classifiacation model where according to different features we can tell if a women will be having any extra marital affairs.
+#### In this project we will build a classification model where according to different features we can tell if a women will be having any extra marital affairs.
 #### The dataset used has 9 columns that we will divide into 8 features and 1 target column
 ***The Columns are Given as:***
 
