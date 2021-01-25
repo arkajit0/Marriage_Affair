@@ -1,4 +1,4 @@
-# Marriage_Affair
+# Extra Marital Affair Prediction
 
 Marriage-Affair Prediction deployment URL: https://marriage-affairs.herokuapp.com/
 
