@@ -42,9 +42,9 @@ def index():
         model = pickle.load(open('final_model_v1.pkl', 'rb'))
         scale = pickle.load(open('final_scale_v1.pkl', 'rb'))
 
-        predicted_value = model.predict(scale.transform([[rate_marriage, children, religious, educ, married_age,
-                                                      occ_2, occ_3, occ_4, occ_5, occ_6,
-                                                      occ_2_husb, occ_3_husb, occ_4_husb, occ_5_husb, occ_6_husb]]))[0]
+        predicted_value = model.predict(scale.transform([[occ_2, occ_3, occ_4, occ_5, occ_6,
+                                                      occ_2_husb, occ_3_husb, occ_4_husb, occ_5_husb, occ_6_husb,
+                                                          rate_marriage, children, religious, educ, married_age,]]))[0]
 
 
         return render_template("test.html", prediction=result[predicted_value])
