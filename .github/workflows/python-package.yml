@@ -39,3 +39,22 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest
+
+
+    - name: Docker login to ACR
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.CONTAINER_REGISTRY_NAME }}
+        username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
+        password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+
+    - name: Build and Push container to registry
+      run: |
+        docker build --file=taskapp/taskapp/Dockerfile -t ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }} .
+        docker push ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+
+    - name: Deploy Container to Azure App Service
+      uses: azure/webapps-container-deploy@v1
+      with:
+        app-name: ${{ secrets.APP_NAME }}
+        images: ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }

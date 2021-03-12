@@ -1,4 +1,7 @@
-from app_clone import test_index
+from app import base
 
-def test_inde():
-    assert test_index() == "Hello world"
+def test_index():
+    try:
+        assert base() == "Hello world"
+    except Exception as e:
+        print(e)
