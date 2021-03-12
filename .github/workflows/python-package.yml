@@ -39,7 +39,11 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest
-
+        
+    - name: Azure Service Principal Authentication
+      uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Docker login to ACR
       uses: azure/docker-login@v1
@@ -58,3 +62,4 @@ jobs:
       with:
         app-name: ${{ secrets.APP_NAME }}
         images: ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+    
