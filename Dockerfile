@@ -1,4 +1,4 @@
-From python:3.6.9
+From python:3.7
 
 COPY . /app
 
