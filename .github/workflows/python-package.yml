@@ -54,7 +54,7 @@ jobs:
         docker push ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
 
     - name: Deploy Container to Azure App Service
-      uses: azure/webapps-container-deploy@v1
+      uses: azure/webapps-deploy@v2
       with:
         app-name: ${{ secrets.APP_NAME }}
         images: ${{ secrets.CONTAINER_REGISTRY_NAME }}/${{ secrets.IMAGE_NAME }}:${{ github.sha }}
