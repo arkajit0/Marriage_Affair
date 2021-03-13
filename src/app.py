@@ -39,8 +39,8 @@ def index():
             occ[occ_husb-2] = 1
             occ_2_husb, occ_3_husb, occ_4_husb, occ_5_husb, occ_6_husb = occ
 
-        model = pickle.load(open('final_model_v1.pkl', 'rb'))
-        scale = pickle.load(open('final_scale_v1.pkl', 'rb'))
+        model = pickle.load(open('src/final_model_v1.pkl', 'rb'))
+        scale = pickle.load(open('src/final_scale_v1.pkl', 'rb'))
 
         predicted_value = model.predict(scale.transform([[occ_2, occ_3, occ_4, occ_5, occ_6,
                                                       occ_2_husb, occ_3_husb, occ_4_husb, occ_5_husb, occ_6_husb,
